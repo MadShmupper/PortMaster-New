@@ -35,11 +35,9 @@ export LD_LIBRARY_PATH="$GAMEDIR/libs:$LD_LIBRARY_PATH"
 
 echo "Starting game." > $CUR_TTY
 
-$GPTOKEYB "openggs" -c openggs.gptk &
-./openggs
+$GPTOKEYB "openggs.${DEVICE_ARCH}" -c openggs.gptk &
+pm_platform_helper "$GAMEDIR/openggs.${DEVICE_ARCH}"
+./openggs.${DEVICE_ARCH}
 
-$ESUDO kill -9 $(pidof gptokeyb)
-$ESUDO systemctl restart oga_events &
-
-# Disable console
-printf "\033c" > $CUR_TTY
+# Cleanup any running gptokeyb instances, and any platform specific stuff.
+pm_finish
