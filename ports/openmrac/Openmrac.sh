@@ -32,7 +32,6 @@ export XDG_CONFIG_HOME="$CONFDIR"
 export XDG_DATA_HOME="$CONFDIR"
 export LD_LIBRARY_PATH="$GAMEDIR/libs.${DEVICE_ARCH}:$LD_LIBRARY_PATH"
 
-$ESUDO chmod 666 /dev/uinput
 $GPTOKEYB "openmrac-es2.${DEVICE_ARCH}" -c "./openmrac.gptk" &
 pm_platform_helper "$GAMEDIR/openmrac-es2.${DEVICE_ARCH}"
 ./openmrac-es2.${DEVICE_ARCH} ./openmrac.dat --skip-settings
