@@ -34,6 +34,6 @@ export LD_LIBRARY_PATH="$GAMEDIR/libs.${DEVICE_ARCH}:$LD_LIBRARY_PATH"
 $ESUDO chmod 666 /dev/uinput
 $GPTOKEYB "openmrac-es2.${DEVICE_ARCH}" -c "./openmrac.gptk" &
 pm_platform_helper "$GAMEDIR/openmrac-es2.${DEVICE_ARCH}"
-./openmrac-es2.${DEVICE_ARCH} ./openmrac.dat --skip-settings 2>&1 | tee -a ./log.txt
+./openmrac-es2.${DEVICE_ARCH} ./openmrac.dat --skip-settings
 # Cleanup any running gptokeyb instances, and any platform specific stuff.
 pm_finish
