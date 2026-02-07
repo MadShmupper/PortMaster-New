@@ -1,5 +1,4 @@
 #!/bin/bash
-# PORTMASTER: openmrac.zip, Openmrac.sh
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 
